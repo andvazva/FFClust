@@ -25,7 +25,7 @@ sudo apt-get install python3-networkx
 
 ## Example data
 In the following link a subject of the ARCHI database resampled in 21 points is available.
-https://drive.google.com/file/d/1IKFpN9FZb-2JnZX5lhMSmW1V_0Dangf7/view?usp=sharing
+https://drive.google.com/drive/folders/1ZkdPRH51UeAucEZniwdJVZ65A9Du4cBz?usp=sharing
 
 ## Use example
 python3 main.py --infile example_data/21ptos-1mfibras-ARCHI.bundles --outdir result
@@ -40,7 +40,7 @@ python3 main.py --infile example_data/21ptos-1mfibras-ARCHI.bundles --outdir res
 
 ## Input/output data format
 ### Input files
-Sample subject is provided in https://drive.google.com/file/d/1IKFpN9FZb-2JnZX5lhMSmW1V_0Dangf7/view?usp=sharing.
+Sample subject is provided in https://drive.google.com/drive/folders/1ZkdPRH51UeAucEZniwdJVZ65A9Du4cBz?usp=sharing.
 - 21ptos-1mfibras-ARCHI.bundles and 21ptos-1mfibras-ARCHI.bundledata: It is a subject of the archi database, whose fibers are resampled in 21 equidistant points.
 
 ### Output files
