@@ -33,7 +33,7 @@ If necessary, compile before the segmentation code in segmentation_clust_v1.2/
 ```
 gcc -fPIC -shared  -O3 -o segmentation.so segmentation.c -fopenmp -ffast-math
 ```
-Ffclust algorithm execution:
+FFclust algorithm execution:
 ```
 python3 main.py --infile example_data/21ptos-1mfibras-ARCHI.bundles --outdir result
 ```
