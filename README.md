@@ -28,8 +28,15 @@ In the following link a subject of the ARCHI database resampled in 21 points is 
 https://drive.google.com/drive/folders/1ZkdPRH51UeAucEZniwdJVZ65A9Du4cBz?usp=sharing
 
 ## Use example
-python3 main.py --infile example_data/21ptos-1mfibras-ARCHI.bundles --outdir result
 
+If necessary, compile before the segmentation code in segmentation_clust_v1.2/
+```
+gcc -fPIC -shared  -O3 -o segmentation.so segmentation.c -fopenmp -ffast-math
+```
+Ffclust algorithm execution:
+```
+python3 main.py --infile example_data/21ptos-1mfibras-ARCHI.bundles --outdir result
+```
 ## Input parameters
 - **--points**: Points to be used in map clustering **Default: 0,3,10,17,20**
 - **--ks**: Number of clusters to be used for each point in K-Means for map **Default: 300, 200, 200, 200, 300**
