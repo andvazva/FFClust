@@ -20,7 +20,6 @@
 #Last update: 31/10/2019
 
 import argparse
-import bundleTools as bT
 import clustering
 import IO
 import numpy as np
@@ -43,7 +42,7 @@ def main():
 
     bundles_dir = IO.create_output(args.outdir)
 
-    fibers = np.asarray(bT.read_bundle(args.infile))
+    fibers = IO.read_bundles(args.infile)
     clusters,centroids,log = clustering.fiber_clustering(fibers,args.points,args.ks,args.thr_seg,args.thr_join)
 
     logging.basicConfig(level = logging.INFO, filename = args.outdir+"/stats.log")

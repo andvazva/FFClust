@@ -21,17 +21,18 @@
 
 import shutil
 import os
-import bundleTools as bT
+import IOFibers as IOF
 
 def create_output(path):
-    bundes_dir = path+"/finalBundles"
     if os.path.exists(path):
         shutil.rmtree(path)
     os.mkdir(path)
-    os.mkdir(bundes_dir)
-    return bundes_dir
+    return path
+
+def read_bundles(path):
+    bundles, names = IOF.read_bundles(path)
+    return bundles[0]
 
 def write_bundles(clusters,centroids,bundles_dir,out_path):
-    for i,fibers in enumerate(clusters):
-        bT.write_bundle(bundles_dir+"/"+str(i)+".bundles",fibers)
-    bT.write_bundle(out_path+"/centroids.bundles",centroids)
+    IOF.write_bundles(out_path+"/finalClusters.bundles",clusters)
+    IOF.write_bundles(out_path+"/centroids.bundles",[centroids])
