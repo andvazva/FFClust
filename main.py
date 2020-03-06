@@ -17,7 +17,7 @@
 # Narciso López López
 # Andrea Vázquez Varela
 #Creation date: 30/10/2019
-#Last update: 31/10/2019
+#Last update: 06/03/2020
 
 import argparse
 import clustering
