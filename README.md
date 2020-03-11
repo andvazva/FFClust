@@ -51,6 +51,6 @@ Sample subject is provided in https://drive.google.com/drive/folders/1ZkdPRH51Ue
 - 21ptos-1mfibras-ARCHI.bundles and 21ptos-1mfibras-ARCHI.bundledata: It is a subject of the archi database, whose fibers are resampled in 21 equidistant points.
 
 ### Output files
-- finalBundles/: This folder contains all the resulting clusters separately in .bundles / .bundlesdata format.
+- finalBundles.bundles/ .bundlesdata: This folder contains all the resulting clusters together in .bundles / .bundlesdata format.
 - centroids.bundles/.bundlesdata: This file contains all the ordered centroids of the clusters. For example, the cluster 0.bundles/bundlesdata corresponds to the centroid that is in position 0 in centroids.bundles/bundlesdata
 - stats.log: This file contains the execution time and the number of clusters at each stage of the algorithm.
