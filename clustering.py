@@ -17,7 +17,7 @@
 # Narciso López López
 # Andrea Vázquez Varela
 #Creation date: 30/10/2019
-#Last update: 21/12/2019
+#Last update: 11/03/2020
 
 import multiprocessing as mp
 from functools import partial
@@ -154,7 +154,7 @@ def parallel_join(fiber_clusters,cluster_indices,thr):
     new_clusters,new_centroids = [], []
     for clust,centroids in results:
         new_clusters.extend(clust)
-        new_centroids.extend(centroids)
+        new_centroids.extend([c] for c in centroids)
     return new_clusters,new_centroids
 
 

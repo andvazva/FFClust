@@ -17,11 +17,12 @@
 # Narciso López López
 # Andrea Vázquez Varela
 #Creation date: 06/03/2020
-#Last update: 06/03/2020
+#Last update: 11/03/2020
 
 import os
 import re
 import struct 
+import random
 import numpy as np
 
 byte_order = "DCBA"
@@ -71,6 +72,22 @@ def read_bundles(path):
     data_path, dim, nfibers, bnames, intervals, byte_order = read_header(path)
     return read_data(data_path,dim,nfibers,bnames,intervals, byte_order), bnames
 
+
+def random_palette(n):
+    return [(random.randrange(0, 255), random.randrange(0, 255), random.randrange(0, 255)) for i in range(n)]
+
+def write_hie(path,names,colors):
+    f = open(path,"w")
+    f.write("# tree 1.0\n\n*BEGIN TREE hierarchy\ngraph_syntax RoiArg\n\n*BEGIN TREE fold_name\nname ALL\n\n")
+    for i,n in enumerate(names):
+        f.write("*BEGIN TREE fold_name\n")
+        f.write("name "+n+"\n")
+        f.write("color "+str(colors[i][0])+" "+str(colors[i][1])+" "+str(colors[i][2])+"\n\n")
+        f.write("*END\n\n")
+    f.write("*END\n\n*END\n\n*END\n\n")
+    f.close()
+
+
 def write_header(path,bnames,intervals,dim,nfibers):
     f = open(path,"w")
     f.write("attributes = {\n    'binary' : 1,\n    'bundles' : ")
@@ -90,7 +107,7 @@ def write_data(data_path,bundles,dim):
             f.write(fiber.ravel().tostring())
     f.close()
 
-def write_bundles(path,bundles,bnames=None):
+def write_bundles(path,bundles,bnames=None,colors=None):
     if bnames == None:
         bnames = [''+str(i)+'' for i in range(len(bundles))]
     bnames = [''+n.strip()+'' for n in bnames]
@@ -103,3 +120,6 @@ def write_bundles(path,bundles,bnames=None):
 
     write_header(path,bnames,intervals,dim,nfibers)
     write_data(data_path,bundles,dim)
+    if colors == None:
+        colors = random_palette(len(bnames))
+    write_hie(os.path.splitext(path)[0]+".hie",bnames,colors)

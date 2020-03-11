@@ -35,4 +35,4 @@ def read_bundles(path):
 
 def write_bundles(clusters,centroids,bundles_dir,out_path):
     IOF.write_bundles(out_path+"/finalClusters.bundles",clusters)
-    IOF.write_bundles(out_path+"/centroids.bundles",[centroids])
+    IOF.write_bundles(out_path+"/centroids.bundles",centroids)
