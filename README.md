@@ -52,5 +52,7 @@ Sample subject is provided in https://drive.google.com/drive/folders/1ZkdPRH51Ue
 
 ### Output files
 - finalClusters.bundles/ .bundlesdata: This folder contains all the resulting clusters together in .bundles / .bundlesdata format.
+- finalClusters.hie: AIMS hierarchy with the labels and colors of the bundles.
 - centroids.bundles/.bundlesdata: This file contains all the ordered centroids of the clusters. For example, the cluster 0.bundles/bundlesdata corresponds to the centroid that is in position 0 in centroids.bundles/bundlesdata
+- centroids.hie: AIMS hierarchy with the labels and colors of the bundles.
 - stats.log: This file contains the execution time and the number of clusters at each stage of the algorithm.
