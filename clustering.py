@@ -86,12 +86,12 @@ def parallel_reassignment(fibers,fiber_clusters,central_index,thr):
             large_indices.append(int(key.split("_")[central_index]))
             c = [fibers[i] for i in indices]
             large_clusters.append(c)
-            large_centroids.append(metrics.calc_centroid(c))
+            large_centroids.append(metrics.centroid_mean_align(c))
         else:
             small_indices.append(int(key.split("_")[central_index]))
             c = [fibers[i] for i in indices]
             small_clusters.append(c)
-            small_centroids.append(metrics.calc_centroid(c))
+            small_centroids.append(metrics.centroid_mean_align(c))
     reassignment = seg.segmentation(21,thr, large_centroids,small_centroids,len(small_centroids), len(large_centroids))
     count = 0
     num_fibers_reass = 0
@@ -128,7 +128,7 @@ def create_graph(centroids,thr):
     return G
 
 def join(thr,group):
-    centroids = [metrics.calc_centroid(c) for c in group]
+    centroids = [metrics.centroid_mean_align(c) for c in group]
     graph = create_graph(centroids,thr)
     cliques = sorted(nx.find_cliques(graph), key=len, reverse=True)
     visited = {}
@@ -142,7 +142,7 @@ def join(thr,group):
                 visited[node] = True
         if len(new_cluster)>0:
             new_clusters.append(new_cluster)
-            new_centroids.append(metrics.calc_centroid(new_cluster))
+            new_centroids.append(metrics.centroid_mean_align(new_cluster))
     return new_clusters,new_centroids
 
 def parallel_join(fiber_clusters,cluster_indices,thr):
