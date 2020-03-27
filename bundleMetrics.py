@@ -17,7 +17,7 @@
 # Andrea Vázquez Varela
 # Narciso López López
 #Creation date: 15/10/2019
-#Last update: 21/12/2019
+#Last update: 27/03/2020
 
 import numpy as np
 from random import choice
@@ -37,6 +37,8 @@ def align_fibers(bundle):
 	for f2 in bundle[1:]:
 		if is_inverted(f1,f2):
 			new_fibers.append(f2[::-1])
+		else:
+			new_fibers.append(f2)
 	return np.asarray(new_fibers)
 
 def centroid_mean_align(bundle):
