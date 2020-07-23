@@ -1,4 +1,7 @@
 # FFClust
+## Reference paper
+This code is the implementation of FFClust: Fast fiber clustering for large tractography datasets for a detailed study of brain connectivity. 
+https://doi.org/10.1016/j.neuroimage.2020.117070
 
 ## Code Dependencies
 To use the code, it is necessary to install the following libraries:
