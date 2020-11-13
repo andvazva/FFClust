@@ -32,22 +32,6 @@ def read_bundle( infile ):
   #bundles = []
   return points#, bundles
 
-def read_OneFiber( infile ):
-
-  points = []
-  bun_file = infile + 'data'
-  os.path.getsize( bun_file )
-  bytes = os.path.getsize( bun_file )
-  num = bytes / 4
-  f = open( bun_file )
-  p = N.frombuffer( f.read( 4 ), 'i' )[ 0 ]
-  vertex = N.frombuffer( f.read( p * 3 * 4 ), 'f' ).reshape( -1, 3 )
-  points.append( vertex )
-  f.close()
-
-  #bundles = []
-  return points#, bundles
-
 def write_bundle( outfile, points ):
 
   #write bundles file
