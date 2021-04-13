@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 #Author: https://pamelaguevara.icb.udec.cl/grupo-imagenes-medicas/
 
 #from soma import aims
