@@ -27,8 +27,8 @@ sudo apt-get install python3-networkx
 ```
 
 ## Example data
-In the following link a subject of the ARCHI database resampled in 21 points is available.
-https://drive.google.com/drive/folders/1ZkdPRH51UeAucEZniwdJVZ65A9Du4cBz?usp=sharing
+In the following link a subject resampled in 21 points is available.
+https://drive.google.com/file/d/1RX2KcKbxxYlfQl_mxPRi0-xfUf8Vw5gM/view?usp=sharing
 
 ## Use example
 
