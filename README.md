@@ -50,8 +50,8 @@ python3 main.py --infile example_data/21ptos-1mfibras-ARCHI.bundles --outdir res
 
 ## Input/output data format
 ### Input files
-Sample subject is provided in https://drive.google.com/drive/folders/1ZkdPRH51UeAucEZniwdJVZ65A9Du4cBz?usp=sharing.
-- 21ptos-1mfibras-ARCHI.bundles and 21ptos-1mfibras-ARCHI.bundledata: It is a subject of the archi database, whose fibers are resampled in 21 equidistant points.
+Sample subject is provided in https://drive.google.com/file/d/1RX2KcKbxxYlfQl_mxPRi0-xfUf8Vw5gM/view?usp=sharing.
+- files .bundles and .bundlesdata: It is an example subject, whose fibers are resampled in 21 equidistant points.
 
 ### Output files
 - finalClusters.bundles/ .bundlesdata: This folder contains all the resulting clusters together in .bundles / .bundlesdata format.
